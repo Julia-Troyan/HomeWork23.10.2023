@@ -3,20 +3,20 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-    // Console.Write("Введите число A: ");
-    // int A = int.Parse(Console.ReadLine());
+// Console.Write("Введите число A: ");
+// int A = int.Parse(Console.ReadLine());
 
-    // Console.Write("Введите степень B: ");
-    // int B = int.Parse(Console.ReadLine());
+// Console.Write("Введите степень B: ");
+// int B = int.Parse(Console.ReadLine());
 
-    // int result = 1;
+// int result = 1;
 
-    // for (int i = 0; i < B; i++)
-    // {
-    //     result *= A;
-    // }
+// for (int i = 0; i < B; i++)
+// {
+//     result *= A;
+// }
 
-    // Console.WriteLine($"{A} в степени {B} равно {result}");
+// Console.WriteLine($"{A} в степени {B} равно {result}");
 
 
 
@@ -52,3 +52,40 @@
 
 //     return sum;
 // }
+
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+int[] arr = { 1, 51, 4, 33, 22, 6, 77, 18 };
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        System.Console.Write($"{array[i]} ");
+    }
+    System.Console.WriteLine();
+}
+
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition]) minPosition = j;
+        }
+
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+PrintArray(arr);
+SelectionSort(arr);
+
+PrintArray(arr);
